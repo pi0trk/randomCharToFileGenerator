@@ -20,7 +20,9 @@ public class FileCreatorTest {
 
     @Test
     public void testWriteToFile() throws IOException {
-        //todo
+        String content = "String is wrote to file if file exists..";
+        fc.writeToFile("src/test/resources/exampleFile.txt", content);
+        Assert.assertEquals(new String(Files.readAllBytes( Paths.get("src/test/resources/exampleFile.txt") ) ), content);
     }
 
 }

@@ -8,7 +8,6 @@ public class StringCharGeneratorTest {
     @Test
     public void testGenerateRandomCharString() {
         String randomCharString = new StringCharGenerator().generateRandomCharString(22);
-        //todo..
-        Assert.assertEquals(randomCharString, "//TODO");
+        Assert.assertEquals(randomCharString.length(), 22);
     }
 }

@@ -13,7 +13,7 @@ class FileCreator {
 
     void writeToFile(String filePath, String content) {
         try (PrintWriter out = new PrintWriter(filePath)) {
-            out.println(content);
+            out.print(content);
         } catch (FileNotFoundException e) {
             log.info("--- Couldn't write to file, file not found. ---");
         }
