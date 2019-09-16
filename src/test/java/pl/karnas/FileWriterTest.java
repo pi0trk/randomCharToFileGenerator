@@ -10,9 +10,10 @@ import java.nio.file.Paths;
 public class FileWriterTest {
 
     @Test
-    public void testWriteToFile() throws IOException {
-        String content = "String is wrote to file if file exists..";
-        FileWriter.writeToFile("src/test/resources/exampleFile.txt", content);
-        Assert.assertEquals(new String(Files.readAllBytes( Paths.get("src/test/resources/exampleFile.txt") ) ), content);
+    public void shouldWriteToFileGivenContent() throws IOException {
+        String content = "String which is wrote to the given file..";
+        FileWriter fileWriter = new FileWriter();
+        fileWriter.writeToFile("src/test/resources/FileWriterTest.txt", content);
+        Assert.assertEquals(new String(Files.readAllBytes(Paths.get("src/test/resources/FileWriterTest.txt"))), content);
     }
 }

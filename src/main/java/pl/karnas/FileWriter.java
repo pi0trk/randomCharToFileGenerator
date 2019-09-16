@@ -5,14 +5,13 @@ import java.io.PrintWriter;
 import java.util.logging.Logger;
 
 class FileWriter {
+    private final Logger log = Logger.getLogger(FileWriter.class.getName());
 
-    private static final Logger log = Logger.getLogger(FileWriter.class.getName());
-
-    static void writeToFile(String filePath, String content) {
+    void writeToFile(String filePath, String content) {
         try (PrintWriter out = new PrintWriter(filePath)) {
             out.print(content);
         } catch (FileNotFoundException e) {
-            log.info("--- Couldn't write to file, file not found. ---");
+            log.info("--- Couldn't write to file. ---");
         }
     }
 }
