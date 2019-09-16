@@ -19,10 +19,9 @@ public class App {
         String charString = newCharacter.generateRandomCharString(NR_OF_CHARS);
         System.out.println("Generated strings of chars: " + charString);
 
-        FileCreator newFile = new FileCreator();
-        newFile.createFile(FILE_PATH);
+        FileCreator.createFile(FILE_PATH);
 
-        newFile.writeToFile(FILE_PATH, charString);
+        FileWriter.writeToFile(FILE_PATH, charString);
 
     }
 }
